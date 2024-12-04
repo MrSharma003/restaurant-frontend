@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import RestaurantForm from "./components/RestaurantForm";
+import SlotForm from "./components/SlotForm";
+import SearchRestaurants from "./components/SearchRestaurants";
+import AvailableSlots from "./components/AvailableSlots";
+import BookTable from "./components/BookTable";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      {/* Left section for Register Restaurant and Add Slot */}
+      <div className="left-section">
+        <h2>Manage Restaurants</h2>
+        <RestaurantForm />
+        <SlotForm />
+      </div>
+
+      {/* Right section for Search, Available Slots, and Book Table */}
+      <div className="right-section">
+        <h2>Booking and Search</h2>
+        <SearchRestaurants />
+        <AvailableSlots />
+        <BookTable />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
